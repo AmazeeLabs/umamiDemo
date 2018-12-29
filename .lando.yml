@@ -1,0 +1,4 @@
+name: canopy
+recipe: drupal8
+config:
+  webroot: web
