@@ -1,4 +1,4 @@
-uuid: 329f0387-a1dc-4d0f-a4a6-977a6085ecef
+uuid: 8bb0a10c-c8c0-4d0d-90f9-4cf809a605d2
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ _core:
   default_config_hash: hewPmBgni9jlDK_IjLxUx1HsTbinK-hdl0lOwjbteIY
 name: 'Full HTML'
 format: full_html
-weight: -10
+weight: 1
 filters:
   filter_align:
     id: filter_align

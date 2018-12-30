@@ -1,4 +1,4 @@
-uuid: 0b9aa921-197f-490e-8674-d01d881b6b03
+uuid: f730683b-cbc8-430b-8a46-d1d70e7740c7
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: e1Nu5xXAuF_QplbBUhQBPLnYWvHtDX0MkZnpuCiY8uM
+  default_config_hash: XTjCg8GntuGZ0Uj-FkkCuQkkbkZcwRQ6ebioZj4qRRo
 id: block_content.basic.default
 targetEntityType: block_content
 bundle: basic
@@ -31,4 +31,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  moderation_state: true

@@ -1,0 +1,17 @@
+uuid: 6d32a95d-9e65-4820-81d5-4486d73d5dbe
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Mn3LzzwSMr3KjCub1Ta_Iy0hQncxMVIT1OThlmyR_lU
+name: medium_3_2_600x400
+label: 'Medium 3:2 (600x400)'
+effects:
+  75efca62-f371-41b7-8c6e-5ce6103e0fe4:
+    uuid: 75efca62-f371-41b7-8c6e-5ce6103e0fe4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      anchor: center-center
+      width: 600
+      height: 400

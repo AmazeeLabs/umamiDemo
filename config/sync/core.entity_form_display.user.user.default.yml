@@ -1,9 +1,10 @@
-uuid: 5d886e67-e564-4a1b-969b-6751bf492131
+uuid: 68aa7adc-8f59-4ba3-b014-a10f900d4124
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.user.user.user_picture
+    - image.style.thumbnail
   module:
     - image
     - user
@@ -30,7 +31,7 @@ content:
     type: image_image
     settings:
       progress_indicator: throbber
-      preview_image_style: ''
+      preview_image_style: thumbnail
     third_party_settings: {  }
     weight: -1
     region: content
