@@ -12,6 +12,7 @@
     "gatsby-plugin-react-helmet": "^3.0.6",
     "gatsby-plugin-sharp": "^2.0.20",
     "gatsby-source-filesystem": "^2.0.20",
+    "gatsby-source-graphql": "^2.0.10",
     "gatsby-transformer-sharp": "^2.1.13",
     "prop-types": "^15.7.2",
     "react": "^16.8.2",
@@ -24,7 +25,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""

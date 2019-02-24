@@ -5,6 +5,18 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: `Drupal`,
+        // This is field under which it's accessible
+        fieldName: process.env.SB_PROJECT_NAME,
+        // Url to query from
+        url: `${process.env.SB_BASE_URL}/graphql`,
+        // @TODO Add authorization; turn off anonymous graphql query permission.
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
