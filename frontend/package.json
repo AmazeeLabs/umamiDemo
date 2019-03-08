@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "esm": "^3.2.11",
     "gatsby": "^2.1.5",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-manifest": "^2.0.18",
@@ -24,10 +25,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
+    "build": "npx --node-arg '-r esm' gatsby build",
+    "dev": "npx --node-arg '-r esm' gatsby develop",
+    "start": "npx --node-arg '-r esm' npm run develop",
+    "serve": "npx --node-arg '-r esm' gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "repository": {
