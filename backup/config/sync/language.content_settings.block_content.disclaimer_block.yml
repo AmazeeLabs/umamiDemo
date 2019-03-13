@@ -1,0 +1,18 @@
+uuid: cadba5f5-6505-4ce6-a304-9600d9714d2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.disclaimer_block
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.disclaimer_block
+target_entity_type_id: block_content
+target_bundle: disclaimer_block
+default_langcode: site_default
+language_alterable: false

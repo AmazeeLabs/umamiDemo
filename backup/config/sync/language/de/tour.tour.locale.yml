@@ -1,0 +1,26 @@
+label: Übersetzung
+tips:
+  locale-overview:
+    label: 'Benutzeroberfläche übersetzen'
+    body: 'Diese Seite erlaubt es die Benutzeroberfläche zu übersetzen oder bestehende Übersetzungen zu abzuändern. Falls die Website eingangs in Englisch installiert wurde, muss zuerst eine weitere Sprache auf der <a href="[site:url]admin/config/regional/language">Sprachen-Seite</a> hinzugefügt werden, um diese Seite nutzen zu können.'
+  locale-language:
+    label: Übersetzungssprache
+    body: 'Die Sprache, die übersetzt werden soll, auswählen.'
+  locale-search:
+    label: Suche
+    body: 'Eingabe eines bestimmten Wortes oder Satzes, das übersetzt werden soll. Es kann auch nur ein Teil eines Wortes angegeben werden.'
+  locale-filter:
+    label: 'Die Suche eingrenzen'
+    body: 'Es kann nach nicht übersetzten Zeichenketten gesucht werden, um etwas zu übersetzen, was bisher noch nicht übersetzt worden ist. Falls eine bereits bestehende Übersetzung abgeändert werden soll, dann sollte besser nur nach bereits übersetzten Zeichenketten gesucht werden.'
+  locale-submit:
+    label: 'Suchkriterien anwenden'
+    body: 'Um die Suchkriterien anzuwenden, auf den <em>Filter</em>-Button klicken.'
+  locale-translate:
+    label: Übersetzen
+    body: 'Die eigene Übersetzung kann in die Textfelder in der rechten Spalte eingegeben werden. Es sollte versucht werden herauszufinden in welchem Kontext der Text verwendet werden soll, um ihn sachgemäß zu übersetzen.'
+  locale-validate:
+    label: 'Die Übersetzungen prüfen und speichern'
+    body: 'Sobald die Übersetzungen abgeschlossen sind, werden diese über einen Klick auf den Button </em>Übersetzungen speichern</em> abgespeichert. Die Übersetzungen müssen immer abgespeichert werden, bevor Änderungen an der Seite vorgenommen werden oder eine neue Suche durchgeführt wird. Andernfalls gehen die vorgenommenen Änderungen verloren.'
+  locale-continue:
+    label: 'Übersetzungen wiederverwenden'
+    body: "Hier erstellte Übersetzungen werden in der Benutzeroberfläche der vorliegenden Website verwendet. Sollen diese auf einer weiteren Website verwendet oder in einem externen Übersetzungseditor abgeändert werden, kann eine .po Datei \r\n<a href=\"[site:url]admin/config/regional/translate/export\">exportiert</a> und im Anschluss <a href=\"[site:url]admin/config/regional/translate/import\">importiert</a> werden."

@@ -1,0 +1,20 @@
+label: Editorial
+type_settings:
+  states:
+    archived:
+      label: Archiviert
+    draft:
+      label: Entwurf
+    published:
+      label: Veröffentlicht
+  transitions:
+    archive:
+      label: Archiv
+    archived_draft:
+      label: 'Auf Entwurf zurücksetzen'
+    archived_published:
+      label: Wiederherstellen
+    create_new_draft:
+      label: 'Neuen Entwurf erstellen'
+    publish:
+      label: Veröffentlichen

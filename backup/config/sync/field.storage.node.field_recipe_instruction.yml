@@ -1,0 +1,21 @@
+uuid: 29121f7d-7f56-4ee6-b0a7-9d9725444c8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: seP7G-QnB7uXOxys45VuxM3NlWVgZf5Hrp8OpuFtkdU
+id: node.field_recipe_instruction
+field_name: field_recipe_instruction
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

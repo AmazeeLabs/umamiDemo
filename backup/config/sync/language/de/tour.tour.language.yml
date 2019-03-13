@@ -1,0 +1,20 @@
+label: Sprache
+tips:
+  language-overview:
+    label: Sprachen
+    body: '<p>Die Seite „Sprachen“ erlaubt es, Sprachen zur Website hinzuzufügen, zu bearbeiten, zu löschen und neu zu ordnen.</p>'
+  language-add:
+    label: 'Sprachen hinzufügen'
+    body: '<p>Um weitere Sprachen zu dieser Website hinzuzufügen, den <em>Sprache hinzufügen</em> Button klicken.</p><p>Hinzugefügte Sprachen werden in der nachfolgenden Liste angezeigt und können dort bearbeitet oder gelöscht werden.</p>'
+  language-reorder:
+    label: 'Sprachen neu anordnen'
+    body: '<p>Um die Priorität der Sprachen auf der Website neu festzulegen nutzen Sie das Symbol neben der jeweiligen Sprache um diese an die gewünschte Position zu ziehen.</p><p>Die hier angegebene Reihenfolge ist die Vorgabe für alle Sprachbezogenen Listen auf der Seite wie beispielsweise die Sprachblöcke, die vom Modul zum Übersetzen der Benutzeroberfläche und vom Modul zur Übersetzung der Inhalte der Website bereitgestellt werden.</p>'
+  language-default:
+    label: 'Eine Sprache als Standard setzen'
+    body: '<p>Die Standardsprache der Website kann durch die Auswahl einer der eingerichteten Sprachen als neuen Standard geändert werden. Die Website verwendet die Standardsprache im Fall, dass keine Auswahl getroffen wurde, aber eine Sprache angegeben sein sollte, zum Beispiel die Sprache der angezeigten Benutzeroberfläche.</p>'
+  language-operations:
+    label: 'Sprachen anpassen'
+    body: '<p>Es werden Manipulationen für das Bearbeiten und Löschen einer Sprache bereit gestellt.</p><p>Der Name und die Schreibrichtung der Sprache kann bearbeitet werden.</p><p>Gelöschte Sprachen können zu einem späteren Zeitpunkt wieder hinzugefügt werden. Beim Löschen einer Sprache werden sämtliche Übersetzungen der Benutzeroberfläche entfernt und Inhalte in dieser Sprache werden auf eine neutrale Sprache zurückgesetzt. Bitte beachten, dass sich die Standardsprache einer Website nicht löschen lässt.</p>'
+  language-continue:
+    label: 'Übersetzungen wiederverwenden'
+    body: 'Nun, da Sie einen Überblick über die Seite Sprachen haben, können Sie fortfahren, indem Sie <ul><li><a href="[site:url]admin/config/regional/language/add">Eine Sprache hinzufügen</a></li><li>Sprachen neu anordnen</li><li>Eine Sprache bearbeiten</li><li>Eine Sprache löschen</li></ul></p>'

@@ -1,0 +1,17 @@
+label: 'Sprachen bearbeiten'
+tips:
+  language-edit-overview:
+    label: 'Sprachen bearbeiten'
+    body: '<p>Diese Seite bietet die Möglichkeit, eine Sprache auf Ihrer Website zu bearbeiten, einschließlich benutzerdefinierter Sprachen.</p>'
+  language-edit-langcode:
+    label: Sprachkürzel
+    body: '<p>Das Sprachkürzel einer Sprache kann auf der Website nicht geändert werde, da es vom System zum Identifizieren der Sprache genutzt wird.</p>'
+  language-edit-label:
+    label: Sprachname
+    body: '<p>Der Name der Sprache wird für alle Benutzer der Website in Englisch angezeigt. Die Namen von mitgelieferten Sprachen können mit dem Interface-Translation-Modul und Namen von mitgelieferten sowie benutzerdefinierten Sprache können mit dem Configuration-Translation-Modul übersetzt werden.</p>'
+  language-edit-direction:
+    label: Sprachlaufrichtung
+    body: '<p>Auswählen ob es sich um eine „Links-nach-rechts“ oder „Rechts-nach-links“ Sprache handelt.</p><p>Bitte beachten, dass nicht alle Themes „Rechts-nach-links“-Layouts unterstützen. Sollte „Rechts-nach-links“ ausgewählt sein, sollte das verwendete Theme im Hinblick darauf getestet werden.</p>'
+  language-edit-continue:
+    label: 'Übersetzungen wiederverwenden'
+    body: '<p>Jetzt, da Sie einen Überblick über die Funktion „Sprache bearbeiten“ haben, können Sie fortfahren mit:<ul><li>Eine Sprache bearbeiten</li><li><a href="[site:url]admin/config/regional/language">Eingerichtete Sprachen anzeigen</a></li></ul></p>'

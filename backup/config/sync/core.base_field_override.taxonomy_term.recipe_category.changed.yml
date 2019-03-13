@@ -1,0 +1,18 @@
+uuid: 893c33b9-ee3f-45a0-b575-cb285ddb2af0
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.recipe_category
+id: taxonomy_term.recipe_category.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: recipe_category
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
