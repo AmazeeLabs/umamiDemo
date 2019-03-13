@@ -1,0 +1,31 @@
+label: 'Bearbeiten-Seite anzeigen'
+tips:
+  views-main:
+    label: 'Ansichtseinstellungen verwalten'
+    body: 'Konfiguration anzeigen oder bearbeiten.'
+  views-ui-displays:
+    label: 'Anzeigen in dieser Ansicht'
+    body: 'Eine Anzeige ist eine Möglichkeit, die Ergebnisse auszugeben, z. B. als Seite oder Block. Eine Ansicht kann mehrere Anzeigen enthalten, die hier aufgelistet sind. Die aktive Anzeige wird hervorgehoben.'
+  views-ui-view-admin:
+    body: 'Führen Sie Verwaltungsaufgaben aus, einschließlich dem Hinzufügen einer Beschreibung und dem Duplizieren einer Ansicht. Klicken Sie auf den Dropdown-Button, um die verfügbaren Optionen anzuzeigen.'
+  views-ui-format:
+    label: Ausgabeformat
+    body: 'Wählen Sie, wie die Ergebnisse ausgegeben werden sollen. Wählen Sie z. B. <em>Inhalt</em>, um jedes Element vollständig auszugeben, wobei Sie Ihre konfigurierten Anzeigeeinstellungen verwenden. Oder wählen Sie <em>Felder</em>, um nur bestimmte Felder für jedes Ergebnis auszugeben. Zusätzliche Formate können durch die Installation von Modulen, die Drupal''s Basisfunktionalität <em>erweitern</em>, hinzugefügt werden.'
+  views-ui-fields:
+    label: Felder
+    body: 'Wenn diese Ansicht Felder verwendet, werden diese hier aufgelistet. Sie können auf ein Feld klicken, um es zu konfigurieren.'
+  views-ui-filter:
+    label: 'Ansicht filtern'
+    body: 'Fügen Sie Filter hinzu, um die Ergebnisse in der Ausgabe einzuschränken. Um z. B. nur Inhalte anzuzeigen, die <em>veröffentlicht</em> sind, würden Sie einen Filter für <em>Veröffentlicht</em> hinzufügen und <em>Ja</em> auswählen.'
+  views-ui-filter-operations:
+    label: Filteraktionen
+    body: 'Filter hinzufügen, umsortieren oder entfernen.'
+  views-ui-sorts:
+    label: Sortierkriterium
+    body: 'Die Reihenfolge steuern, in der die Ergebnisse ausgegeben werden. Auf eine aktive Sortierregel klicken, um diese zu konfigurieren.'
+  views-ui-sorts-operations:
+    label: Sortieraktionen
+    body: 'Sortierregeln hinzufügen, umsortieren oder entfernen.'
+  views-ui-preview:
+    label: Vorschau
+    body: 'Eine Vorschau der Ansicht anzeigen.'

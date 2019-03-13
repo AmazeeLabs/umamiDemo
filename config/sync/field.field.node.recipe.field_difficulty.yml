@@ -16,7 +16,7 @@ bundle: recipe
 label: Difficulty
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value:
   -
     value: medium

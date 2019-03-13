@@ -6,7 +6,14 @@ dependencies:
     - field.storage.node.field_image
     - node.type.recipe
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 _core:
   default_config_hash: MIGyvTtO79nt-wyhOztq7W4THL5MbTI-XpNZj6O9v9k
 id: node.recipe.field_image

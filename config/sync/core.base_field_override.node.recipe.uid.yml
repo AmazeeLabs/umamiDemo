@@ -1,0 +1,20 @@
+uuid: 05b8a362-7584-41b7-a254-c8d3b519b9f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.recipe
+id: node.recipe.uid
+field_name: uid
+entity_type: node
+bundle: recipe
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

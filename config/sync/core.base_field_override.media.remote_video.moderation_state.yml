@@ -1,0 +1,18 @@
+uuid: de6196b0-419e-4f4a-916e-447a821ddc0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.remote_video
+id: media.remote_video.moderation_state
+field_name: moderation_state
+entity_type: media
+bundle: remote_video
+label: 'Moderation state'
+description: 'The moderation state of this piece of content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

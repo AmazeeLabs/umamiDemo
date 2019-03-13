@@ -4,6 +4,7 @@ module:
   breakpoint: 0
   ckeditor: 0
   config: 0
+  config_translation: 0
   contact: 0
   content_moderation: 0
   contextual: 0
@@ -21,7 +22,9 @@ module:
   help: 0
   history: 0
   image: 0
+  language: 0
   link: 0
+  locale: 0
   media: 0
   menu_ui: 0
   node: 0
@@ -42,6 +45,7 @@ module:
   views_ui: 0
   workflows: 0
   menu_link_content: 1
+  content_translation: 10
   views: 10
   demo_umami: 1000
 theme:

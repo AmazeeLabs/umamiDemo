@@ -1,0 +1,18 @@
+uuid: c4a4b13c-ddcd-466d-beae-a83f65672371
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.disclaimer_block
+id: block_content.disclaimer_block.info
+field_name: info
+entity_type: block_content
+bundle: disclaimer_block
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

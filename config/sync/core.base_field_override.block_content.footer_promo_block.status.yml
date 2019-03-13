@@ -1,0 +1,22 @@
+uuid: df220906-07d8-4379-9d80-570e365c1ed7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_promo_block
+id: block_content.footer_promo_block.status
+field_name: status
+entity_type: block_content
+bundle: footer_promo_block
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

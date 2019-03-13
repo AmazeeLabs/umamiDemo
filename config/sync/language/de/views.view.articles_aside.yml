@@ -1,0 +1,24 @@
+label: Artikelseitenleiste
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Anwenden
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: Absteigend
+      fields:
+        title:
+          separator: ', '
+      title: 'Mehr vorgestellte Artikel'
+      arguments:
+        nid:
+          exception:
+            title: Alle
+  block_1:
+    display_title: Block
+    display_options:
+      block_description: Artikelseitenleiste

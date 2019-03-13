@@ -14,7 +14,7 @@ bundle: footer_promo_block
 label: 'Promo text'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -1,0 +1,18 @@
+uuid: 63d116ea-60d8-430c-8520-b42376fd648a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_promo_block
+id: block_content.footer_promo_block.changed
+field_name: changed
+entity_type: block_content
+bundle: footer_promo_block
+label: Changed
+description: 'The time that the custom block was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
