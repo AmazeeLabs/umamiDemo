@@ -1,4 +1,4 @@
-name: canopy
+name: umami
 recipe: drupal8
 config:
   webroot: web

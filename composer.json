@@ -94,6 +94,12 @@
                 ".gitattributes": "../.gitattributes"
             }
         },
-        "enable-patching": true
+        "enable-patching": true,
+        "merge-plugin": {
+            "include": [
+                "packages/composer.json"
+            ],
+            "replace": true
+        }
     }
 }

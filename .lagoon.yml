@@ -1,6 +1,6 @@
 docker-compose-yaml: docker-compose.yml
 
-project: canopy
+project: umami
 
 tasks:
 #   pre-rollout:
@@ -51,4 +51,4 @@ environments:
         service: cli
     routes:
         - varnish:
-            - "canopy.amazee.io"
+            - "umami.amazee.io"

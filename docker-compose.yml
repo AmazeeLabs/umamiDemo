@@ -2,7 +2,7 @@ version: '2.3'
 
 x-lagoon-project:
   # Lagoon project name (leave `&lagoon-project` when you edit this)
-  &lagoon-project canopy
+  &lagoon-project umami
 
 x-volumes:
   &default-volumes
@@ -14,7 +14,7 @@ x-environment:
   &default-environment
     LAGOON_PROJECT: *lagoon-project
     # Route that should be used locally
-    LAGOON_ROUTE: http://canopy.docker.amazee.io
+    LAGOON_ROUTE: http://umami.docker.amazee.io
     # Uncomment if you like to have the system behave like in production
     #LAGOON_ENVIRONMENT_TYPE: production
     # Uncomment to enable xdebug and then restart via `docker-compose up -d`
@@ -41,7 +41,7 @@ services:
     ports:
     - "1234:1234"
     extra_hosts:
-    - "canopy.docker.amazee.io:172.17.0.1"
+    - "umami.docker.amazee.io:172.17.0.1"
 
   nginx:
     build:
@@ -57,7 +57,20 @@ services:
       - cli # basically just tells docker-compose to build the cli first
     environment:
       << : *default-environment # loads the defined environment variables from the top
-      LAGOON_LOCALDEV_URL: nginx.canopy.docker.amazee.io # generate another route for nginx, by default we go to varnish
+      LAGOON_LOCALDEV_URL: nginx.umami.docker.amazee.io # generate another route for nginx, by default we go to varnish
+    networks:
+      - amazeeio-network
+      - default
+
+  storybook:
+    build:
+      context: .
+      dockerfile: lagoon/Dockerfile.storybook
+    labels:
+      lagoon.type: nginx
+    environment:
+      <<: *default-environment # loads the defined environment variables from the top
+      LAGOON_LOCALDEV_URL: storybook.umami.docker.amazee.io # generate another route for nginx, by default we go to varnish
     networks:
       - amazeeio-network
       - default

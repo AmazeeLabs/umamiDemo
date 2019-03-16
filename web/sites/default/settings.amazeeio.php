@@ -15,18 +15,17 @@
  * - production.services.yml
  *   For services only for the production environment.
  * - development.settings.php
- *   For settings only for the development environment (devevlopment sites, docker).
+ *   For settings only for the development environment (development sites, docker).
  * - development.services.yml
- *   For services only for the development environment (devevlopment sites, docker).
+ *   For services only for the development environment (development sites, docker).
  * - settings.local.php
- *   For settings only for the local environment, this file will not be commited in GIT!
+ *   For settings only for the local environment, this file will not be committed in GIT!
  * - services.local.yml
- *   For services only for the local environment, this file will not be commited in GIT!
- *
+ *   For services only for the local environment, this file will not be committed in GIT!
  */
 
-### Lagoon Database connection
-if(getenv('LAGOON')){
+// Lagoon Database connection.
+if (getenv('LAGOON')) {
   $databases['default']['default'] = array(
     'driver' => 'mysql',
     'database' => getenv('MARIADB_DATABASE') ?: 'drupal',
@@ -38,7 +37,7 @@ if(getenv('LAGOON')){
   );
 }
 
-### Lagoon Solr connection
+// Lagoon Solr connection
 // WARNING: you have to create a search_api server having "solr" machine name at
 // /admin/config/search/search-api/add-server to make this work.
 if (getenv('LAGOON')) {
@@ -53,7 +52,7 @@ if (getenv('LAGOON')) {
   $config['search_api.server.solr']['name'] = 'Lagoon Solr - Environment: ' . getenv('LAGOON_PROJECT');
 }
 
-### Lagoon Redis connection
+// Lagoon Redis connection.
 if (getenv('LAGOON') && file_exists(DRUPAL_ROOT . '/modules/contrib/redis/src')) {
   $settings['redis.connection']['interface'] = 'PhpRedis';
   $settings['redis.connection']['host'] = getenv('REDIS_HOST') ?: 'redis';
@@ -61,7 +60,7 @@ if (getenv('LAGOON') && file_exists(DRUPAL_ROOT . '/modules/contrib/redis/src'))
 
   $settings['cache_prefix']['default'] = getenv('LAGOON_PROJECT') . '_' . getenv('LAGOON_GIT_SAFE_BRANCH');
 
-  # Do not set the cache during installations of Drupal
+  // Do not set the cache during installations of Drupal.
   if (!drupal_installation_attempted() && extension_loaded('redis')) {
     $settings['cache']['default'] = 'cache.backend.redis';
 
@@ -109,56 +108,63 @@ if (getenv('LAGOON') && file_exists(DRUPAL_ROOT . '/modules/contrib/redis/src'))
   }
 }
 
-### Lagoon Reverse proxy settings
+// Lagoon Reverse proxy settings.
 if (getenv('LAGOON')) {
   $settings['reverse_proxy'] = TRUE;
 }
 
-### Trusted Host Patterns, see https://www.drupal.org/node/2410395 for more information.
-### If your site runs on multiple domains, you need to add these domains here
+// Trusted Host Patterns, see https://www.drupal.org/node/2410395 for more information.
+// If your site runs on multiple domains, you need to add these domains here.
 if (getenv('LAGOON_ROUTES')) {
   $settings['trusted_host_patterns'] = array(
-    '^' . str_replace(['.', 'https://', 'http://', ','], ['\.', '', '', '|'], getenv('LAGOON_ROUTES')) . '$', // escape dots, remove schema, use commas as regex separator
-   );
+    // Escape dots, remove schema, use commas as regex separator.
+    '^' . str_replace(['.', 'https://', 'http://', ','], ['\.', '', '', '|'], getenv('LAGOON_ROUTES')) . '$',
+  );
 }
 
-### Temp directory
+// Temp directory.
 if (getenv('TMP')) {
   $config['system.file']['path']['temporary'] = getenv('TMP');
 }
 
-### Hash Salt
+// Hash Salt.
 if (getenv('LAGOON')) {
   $settings['hash_salt'] = hash('sha256', getenv('LAGOON_PROJECT'));
 }
 
-// Settings for all environments
-if (file_exists(__DIR__ . '/all.settings.php')) {
-  include __DIR__ . '/amazeeio.all.settings.php';
+// Settings for all environments.
+$env_settings = __DIR__ . '/amazeeio.all.settings.php';
+if (file_exists($env_settings)) {
+  include $env_settings;
 }
 
-// Services for all environments
-if (file_exists(__DIR__ . '/all.services.yml')) {
-  $settings['container_yamls'][] = __DIR__ . '/amazeeio.all.services.yml';
+// Services for all environments.
+$env_services = __DIR__ . '/amazeeio.all.services.yml';
+if (file_exists($env_services)) {
+  $settings['container_yamls'][] = $env_services;
 }
 
-if(getenv('LAGOON_ENVIRONMENT_TYPE')){
+if (getenv('LAGOON_ENVIRONMENT_TYPE')) {
   // Environment specific settings files.
-  if (file_exists(__DIR__ . '/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.settings.php')) {
-    include __DIR__ . '/amazeeio.' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.settings.php';
+  $env_settings = __DIR__ . '/amazeeio.' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.settings.php';
+  if (file_exists($env_settings)) {
+    include $env_settings;
   }
 
   // Environment specific services files.
-  if (file_exists(__DIR__ . '/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.services.yml')) {
-    $settings['container_yamls'][] = __DIR__ . '/amazeeio.' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.services.yml';
+  $env_services = __DIR__ . '/amazeeio.' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.services.yml';
+  if (file_exists($env_services)) {
+    $settings['container_yamls'][] = $env_services;
   }
 }
 
 // Last: this servers specific settings files.
-if (file_exists(__DIR__ . '/settings.local.php')) {
-  include __DIR__ . '/settings.local.php';
+$env_settings = __DIR__ . '/settings.local.php';
+if (file_exists($env_settings)) {
+  include $env_settings;
 }
 // Last: This server specific services file.
-if (file_exists(__DIR__ . '/services.local.yml')) {
-  $settings['container_yamls'][] = __DIR__ . '/services.local.yml';
+$env_services = __DIR__ . '/services.local.yml';
+if (file_exists($env_services)) {
+  $settings['container_yamls'][] = $env_services;
 }
