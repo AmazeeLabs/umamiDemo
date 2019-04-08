@@ -4772,6 +4772,14 @@ gatsby-source-graphql@^2.0.10:
     node-fetch "^1.7.3"
     uuid "^3.1.0"
 
+gatsby-transformer-json@^2.1.9:
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.1.9.tgz#5d183e117a29227b30bb0da2549c15c6b7b42e10"
+  integrity sha512-uDbP6whSbQJQXwE/+JtuJn59YxUX0nlFgwqB6K0wQEffRKnl+DhozNgVbwdcjFs7oOAB/8/WujSYgjXUmwNrYQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    bluebird "^3.5.0"
+
 gatsby-transformer-sharp@^2.1.13:
   version "2.1.13"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.1.13.tgz#ab25f2e5f73cbd715dbb86f9d095bbfda0c45961"

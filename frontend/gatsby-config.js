@@ -17,6 +17,14 @@ module.exports = {
         // @TODO Add authorization; turn off anonymous graphql query permission.
       }
     },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data`,
+        ignore: [`**/\.*`] // ignore files starting with a dot
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
