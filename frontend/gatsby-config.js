@@ -1,3 +1,6 @@
+const path = require("path");
+const btoa = require("btoa");
+
 module.exports = {
   siteMetadata: {
     title: `Umami: a Gatsby-Drupal-GraphQL demo`,
@@ -5,6 +8,15 @@ module.exports = {
     author: `@johnalbin`
   },
   plugins: [
+    `gatsby-plugin-postcss`,
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        src: path.join(__dirname, "src"),
+        components: path.join(__dirname, "src/components"),
+        templates: path.join(__dirname, "src/templates")
+      }
+    },
     {
       resolve: "gatsby-source-graphql",
       options: {
@@ -13,10 +25,16 @@ module.exports = {
         // This is field under which it's accessible
         fieldName: process.env.SB_PROJECT_NAME,
         // Url to query from
-        url: `${process.env.SB_BASE_URL}/graphql`
+        url: `${process.env.SB_BASE_URL}/graphql`,
         // @TODO Add authorization; turn off anonymous graphql query permission.
+        headers: {
+          // Authorization: `Basic ${btoa(
+          //   process.env.SB_ADMIN_USER + ":" + process.env.SB_ADMIN_PASS
+          // )}`
+        }
       }
     },
+    `gatsby-plugin-graphql-preview`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
