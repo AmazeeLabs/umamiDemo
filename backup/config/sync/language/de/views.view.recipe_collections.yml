@@ -1,6 +1,5 @@
 display:
   default:
-    display_title: Master
     display_options:
       exposed_form:
         options:
@@ -10,7 +9,6 @@ display:
           sort_asc_label: Aufsteigend
           sort_desc_label: Absteigend
       fields:
-        name:
-          separator: ', '
-  block:
-    display_title: Block
+        name: {  }
+  block: {  }
+label: Rezeptsammlungen
