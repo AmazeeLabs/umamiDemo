@@ -34,7 +34,7 @@ module.exports = {
         }
       }
     },
-    `gatsby-plugin-graphql-preview`,
+    // `gatsby-plugin-graphql-preview`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
