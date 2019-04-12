@@ -1,0 +1,15 @@
+{
+  "name": "Umami GraphQL Schema",
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "gatsby": {
+        "url": "http://localhost:8000/___graphql",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": true
+      }
+    }
+  }
+}

@@ -33,3 +33,6 @@ cypress/integration
 
 # Ignore the development install log.
 .install.log
+
+# Ignore auto-generated GraphQL schema
+/schema.graphql
