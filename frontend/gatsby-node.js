@@ -491,4 +491,79 @@ export const createPages = async ({ graphql, actions }) => {
   ]);
 
   // Build pages.
+  try {
+    // Helper to convert Drupal entity names to file-name-friendly strings.
+    const toFilename = string => string.replace(/_/g, "-");
+
+    // Node pages.
+    for (let key in data.node) {
+      const { slug, ...node } = data.node[key];
+      try {
+        // Skip unpublished nodes.
+        if (!node.published) {
+          continue;
+        }
+
+        // data.node[`node${node.nid}-${language}`]
+        console.log(`${key}: ${data.node[key].slug}`);
+        // createPage({
+        //   path: slug,
+        //   component: path.resolve(
+        //     `./src/templates/node-${toFilename(node.nodeType)}.js`
+        //   ),
+        //   context: node
+        // });
+      } catch (error) {
+        throw new Error(
+          `Failed building ${node.nodeType} node ${node.nid} page: ${e.message}`
+        );
+      }
+    }
+
+    // Term pages.
+    for (let key in data.term) {
+      // data.term[`term${tid}-${language}`]
+      console.log(`${key}: ${data.term[key].slug}`);
+      // createPage({
+      //   path: slug,
+      //   component: path.resolve(`./src/templates/taxonomy-term-${toFilename(term)}.js`),
+      //   context,
+      // });
+    }
+
+    // User pages.
+    for (let key in data.user) {
+      // data.user[`user${user.uid}-${language}`]
+      console.log(`${key}: ${data.user[key].slug}`);
+    }
+
+    // Listing pages.
+    for (let key in data.index) {
+      // data.index[`user-${language}`]
+      // data.index[`taxonomy${taxonomy}-${language}`]
+      // data.index[`node${node.nodeType}-${language}`]
+      console.log(`${key}: ${data.index[key].slug}`);
+      // createPage({
+      //   path: slug,
+      //   component: path.resolve(`./src/templates/index-node-${toFilename(nodeType)}.js`),
+      //   context,
+      // });
+    }
+
+    // Homepages.
+    for (let key in data.language) {
+      // data.language[id]
+      console.log(`${key}: ${data.language[key].slug}`);
+      // createPage({
+      //   path: '/',
+      //   component: path.resolve(`./src/templates/index.js`),
+      //   context: {
+      //     path: '/',
+      //   },
+      // });
+    }
+  } catch (error) {
+    console.error(`\nGatsby createPage build failed!`);
+    throw error;
+  }
 };
