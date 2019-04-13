@@ -464,6 +464,33 @@ export const createPages = async ({ graphql, actions }) => {
     }
     return value;
   };
+  const flatten = value => {
+    if (!value) {
+      return value;
+    }
+
+    // Flatten "entityTranslation" values.
+    if (value.entityTranslation) {
+      value = flattenTranslation(value);
+    } else if (value.entity && value.entity.entityTranslation) {
+      value = flattenTranslation(value.entity);
+    } else if (Array.isArray(value) && value[0]) {
+      if (value[0].entity && value[0].entity.entityTranslation) {
+        value = value.map(({ entity }) => flattenTranslation(entity));
+      } else if (value[0].entityTranslation) {
+        value = value.map(value => flattenTranslation(value));
+      }
+    }
+
+    // Flatten "url" values.
+    if (Array.isArray(value)) {
+      value = value.map(flattenUrl);
+    } else {
+      value = flattenUrl(value);
+    }
+
+    return value;
+  };
 
   for (let i = 0; i < nodes.length; i++) {
     let {
@@ -494,39 +521,7 @@ export const createPages = async ({ graphql, actions }) => {
     // Flatten field values
     for (let fieldName in node) {
       try {
-        if (!node[fieldName]) {
-          continue;
-        }
-
-        // Flatten "entityTranslation" values.
-        if (node[fieldName].entityTranslation) {
-          node[fieldName] = flattenTranslation(node[fieldName]);
-        } else if (
-          node[fieldName].entity &&
-          node[fieldName].entity.entityTranslation
-        ) {
-          node[fieldName] = flattenTranslation(node[fieldName].entity);
-        } else if (Array.isArray(node[fieldName]) && node[fieldName][0]) {
-          if (
-            node[fieldName][0].entity &&
-            node[fieldName][0].entity.entityTranslation
-          ) {
-            node[fieldName] = node[fieldName].map(({ entity }) =>
-              flattenTranslation(entity)
-            );
-          } else if (node[fieldName][0].entityTranslation) {
-            node[fieldName] = node[fieldName].map(value =>
-              flattenTranslation(value)
-            );
-          }
-        }
-
-        // Flatten "url" values.
-        if (Array.isArray(node[fieldName])) {
-          node[fieldName] = node[fieldName].map(flattenUrl);
-        } else {
-          node[fieldName] = flattenUrl(node[fieldName]);
-        }
+        node[fieldName] = flatten(node[fieldName]);
       } catch (e) {
         throw new Error(
           `Failed flattening values of node ${node.nid}'s ${fieldName}: ${
