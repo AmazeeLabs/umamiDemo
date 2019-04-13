@@ -23,7 +23,7 @@ module.exports = {
         // This type will contain remote schema Query type
         typeName: `Drupal`,
         // This is field under which it's accessible
-        fieldName: process.env.SB_PROJECT_NAME,
+        fieldName: `umami`, // process.env.SB_PROJECT_NAME,
         // Url to query from
         url: `${process.env.SB_BASE_URL}/graphql`,
         // @TODO Add authorization; turn off anonymous graphql query permission.
@@ -35,14 +35,15 @@ module.exports = {
       }
     },
     // `gatsby-plugin-graphql-preview`,
-    `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/data`,
-        ignore: [`**/\.*`] // ignore files starting with a dot
-      }
-    },
+    // `gatsby-transformer-json`,
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `data`,
+    //     path: `${__dirname}/src/data`,
+    //     ignore: [`**/\.*`] // ignore files starting with a dot
+    //   }
+    // },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

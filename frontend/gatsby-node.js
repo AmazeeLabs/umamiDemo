@@ -4,36 +4,34 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+// Gatsby build steps:
+// https://www.gatsbyjs.org/docs/gatsby-lifecycle-apis/
+
 import path from "path";
 import { promises as fsPromises } from "fs";
-import gatsbyConfig from "./gatsby-config";
-import {
-  getDrupalContentQuery,
-  getDrupalSetupQuery,
-  getDrupalTaxonomyQuery
-} from "./gatsby-node-drupal";
+// import gatsbyConfig from "./gatsby-config";
 
 export const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   // Find the config for gatsby-source-graphql used in gatsby-config.js.
-  let gatsbySourceGraphQL;
-  for (let i = 0; i < gatsbyConfig.plugins.length; i++) {
-    if (gatsbyConfig.plugins[i].resolve === "gatsby-source-graphql") {
-      gatsbySourceGraphQL = {
-        // All of Drupal's graphQL data is available underneath
-        // the configured fieldName.
-        fieldName: gatsbyConfig.plugins[i].options.fieldName,
-        // gatsby-source-graphql adds the configured typeName
-        // and an underscore to all Drupal type names.
-        typeName: `${gatsbyConfig.plugins[i].options.typeName}_`
-      };
-    }
-  }
-
-  const drupalSetupQuery = getDrupalSetupQuery(gatsbySourceGraphQL);
-  const drupalContentQuery = getDrupalContentQuery(gatsbySourceGraphQL);
-  const drupalTaxonomyQuery = getDrupalTaxonomyQuery(gatsbySourceGraphQL);
+  // for (let i = 0; i < gatsbyConfig.plugins.length; i++) {
+  //   if (gatsbyConfig.plugins[i].resolve === "gatsby-source-graphql") {
+  //     gatsbySourceGraphQL = {
+  //       // All of Drupal's graphQL data is available underneath
+  //       // the configured fieldName.
+  //       fieldName: gatsbyConfig.plugins[i].options.fieldName,
+  //       // gatsby-source-graphql adds the configured typeName
+  //       // and an underscore to all Drupal type names.
+  //       typeName: gatsbyConfig.plugins[i].options.typeName
+  //     };
+  //   }
+  // }
+  // But hard-coding is easier.
+  const gatsbySourceGraphQL = {
+    fieldName: "umami",
+    typeName: "Drupal"
+  };
 
   // Organize our results to make building pages easier.
   const data = {
@@ -65,7 +63,50 @@ export const createPages = async ({ graphql, actions }) => {
   let termCount;
   const languages = [];
   try {
-    let result = await graphql(drupalSetupQuery, variables);
+    let result = await graphql(
+      `
+        query drupalSetupQuery($changed: String = "0") {
+          umami {
+            availableLanguages {
+              id
+              name
+              direction
+              weight
+              argument
+              isDefault
+            }
+            taxonomyTermQuery(
+              filter: {
+                conditions: [
+                  {
+                    operator: GREATER_THAN
+                    field: "changed"
+                    value: [$changed]
+                  }
+                ]
+              }
+            ) {
+              count
+            }
+            nodeQuery(
+              filter: {
+                conditions: [
+                  { field: "status", value: ["1"] }
+                  {
+                    operator: GREATER_THAN
+                    field: "changed"
+                    value: [$changed]
+                  }
+                ]
+              }
+            ) {
+              count
+            }
+          }
+        }
+      `,
+      variables
+    );
 
     if (result.errors) {
       throw result.errors;
@@ -108,6 +149,49 @@ export const createPages = async ({ graphql, actions }) => {
 
   // Query for taxonomy terms.
   let terms = [];
+  const drupalTaxonomyQuery = `
+    query allDrupalTaxonomyQuery(
+      $limit: Int = 50
+      $offset: Int = 0
+      $changed: String = "0"
+      $language: Drupal_LanguageId = EN
+    ) {
+      umami {
+        taxonomyTermQuery(
+          filter: {conditions: [
+            {operator: GREATER_THAN, field: "changed", value: [$changed]}
+          ]}
+          sort: [
+            {field: "tid", direction: ASC}
+          ]
+          limit: $limit
+          offset: $offset
+        ) {
+          terms: entities {
+            ...on Drupal_TaxonomyTerm {
+              tid
+              taxonomy: entityBundle
+              changedUnix: changed
+            }
+            translated: entityTranslation(language: $language) {
+              ...on Drupal_TaxonomyTerm {
+                name
+                description {
+                  value: processed
+                }
+                langcode {
+                  value
+                }
+                url: entityUrl {
+                  path
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
   try {
     const queries = [];
     // Taxonomy terms contain less data, so we can query for more at a time.
@@ -192,6 +276,135 @@ export const createPages = async ({ graphql, actions }) => {
 
   // Query for nodes.
   let nodes = [];
+  const drupalContentQuery = `
+    query allDrupalContentQuery(
+      $limit: Int = 10
+      $offset: Int = 0
+      $changed: String = "0"
+      $language: Drupal_LanguageId = EN
+    ) {
+      umami {
+        nodeQuery(
+          filter: {conditions: [
+            {field: "status", value: ["1"]}
+            {operator: GREATER_THAN, field: "changed", value: [$changed]}
+          ]}
+          sort: [
+            {field: "created", direction: DESC}
+          ]
+          limit: $limit
+          offset: $offset
+        ) {
+          nodes: entities {
+            # Get the same data for any type of node.
+            ...on Drupal_Node {
+              nid
+              nodeType: entityBundle
+              published: status
+              created: entityCreated
+              createdUnix: created
+              changed: entityChanged
+              changedUnix: changed
+              user: entityOwner {
+                uid
+                name
+                translated: entityTranslation(language: $language) {
+                  ...on Drupal_User {
+                    ...UrlFragment
+                  }
+                }
+              }
+            }
+            translated: entityTranslation(language: $language) {
+              ...on Drupal_Node {
+                title
+                ...UrlFragment
+                language: entityLanguage {
+                  id
+                }
+              }
+              # Get data specific to a node type.
+              ...ArticleFragment
+              ...RecipeFragment
+              ...PageFragment
+            }
+          }
+        }
+      }
+    }
+
+    fragment ArticleFragment on Drupal_NodeArticle {
+      body {
+        ...FieldBodyFragment
+      }
+      image: fieldImage {
+        ...FieldImageFragment
+      }
+      tags: fieldTags {
+        entity {
+          ...TaxonomyTermFragment
+        }
+      }
+    }
+
+    fragment PageFragment on Drupal_NodePage {
+      body {
+        ...FieldBodyFragment
+      }
+    }
+
+    fragment RecipeFragment on Drupal_NodeRecipe {
+      summary: fieldSummary {
+        value: processed
+      }
+      numberOfServings: fieldNumberOfServings
+      preparationTime: fieldPreparationTime
+      cookingTime:fieldCookingTime
+      difficulty: fieldDifficulty
+      image: fieldImage {
+        ...FieldImageFragment
+      }
+      ingredients: fieldIngredients
+      recipeInstruction: fieldRecipeInstruction {
+        value: processed
+      }
+      recipeCategory: fieldRecipeCategory {
+        entity {
+          ...TaxonomyTermFragment
+        }
+      }
+      tags: fieldTags {
+        entity {
+          ...TaxonomyTermFragment
+        }
+      }
+    }
+
+    fragment UrlFragment on Drupal_Entity {
+      url: entityUrl {
+        path
+        routed
+      }
+    }
+
+    fragment FieldBodyFragment on Drupal_FieldNodeBody {
+      value: processed
+      summary: summaryProcessed
+    }
+
+    fragment FieldImageFragment on Drupal_FieldNodeFieldImage {
+      alt
+      title
+      width
+      height
+      url
+    }
+
+    fragment TaxonomyTermFragment on Drupal_TaxonomyTerm {
+      taxonomy: entityBundle
+      tid
+    }
+  `;
   try {
     const queries = [];
     for (let languageKey in data.language) {
