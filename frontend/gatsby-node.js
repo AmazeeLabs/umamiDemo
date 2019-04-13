@@ -173,7 +173,7 @@ export const createPages = async ({ graphql, actions }) => {
               taxonomy: entityBundle
               changedUnix: changed
             }
-            translated: entityTranslation(language: $language) {
+            entityTranslation(language: $language) {
               ...on Drupal_TaxonomyTerm {
                 name
                 description {
@@ -235,20 +235,20 @@ export const createPages = async ({ graphql, actions }) => {
   }
 
   // Only cache the term if it has a translation for the given language.
-  terms = terms.filter(term => !!term.translated);
+  terms = terms.filter(term => !!term.entityTranslation);
 
   // Cache the taxonomy terms.
   for (let i = 0; i < terms.length; i++) {
     const term = terms[i];
     try {
-      const language = term.translated.langcode.value;
+      const language = term.entityTranslation.langcode.value;
       const taxonomy = term.taxonomy;
 
       // Find the Gatsby slug for a taxonomy's listing page.
       if (!data.index[`taxonomy${taxonomy}-${language}`]) {
         data.index[`taxonomy${taxonomy}-${language}`] = {
           type: "taxonomy",
-          slug: path.dirname(term.translated.url.path),
+          slug: path.dirname(term.entityTranslation.url.path),
           taxonomy,
           language
         };
@@ -260,15 +260,15 @@ export const createPages = async ({ graphql, actions }) => {
         taxonomy,
         language,
         changedUnix: term.changedUnix,
-        name: term.translated.name,
-        description: term.translated.description,
-        slug: term.translated.url.path
+        name: term.entityTranslation.name,
+        description: term.entityTranslation.description,
+        slug: term.entityTranslation.url.path
       };
       data.term[`term${term.tid}-${language}`] = terms[i];
     } catch (e) {
       throw new Error(
         `Failed finding Gatsby slug for taxonomy term, ${
-          term.translated.name
+          term.entityTranslation.name
         }: ${e.message}`
       );
     }
@@ -308,14 +308,14 @@ export const createPages = async ({ graphql, actions }) => {
               user: entityOwner {
                 uid
                 name
-                translated: entityTranslation(language: $language) {
+                entityTranslation(language: $language) {
                   ...on Drupal_User {
                     ...UrlFragment
                   }
                 }
               }
             }
-            translated: entityTranslation(language: $language) {
+            entityTranslation(language: $language) {
               ...on Drupal_Node {
                 title
                 ...UrlFragment
@@ -444,12 +444,12 @@ export const createPages = async ({ graphql, actions }) => {
   }
 
   // Only cache the node if it has a translation for the given language.
-  nodes = nodes.filter(node => !!node.translated);
+  nodes = nodes.filter(node => !!node.entityTranslation);
 
   // Flatten the node data.
-  const flattenTranslated = ({ translated, ...rest }) => ({
+  const flattenTranslation = ({ entityTranslation, ...rest }) => ({
     ...rest,
-    ...translated
+    ...entityTranslation
   });
   const flattenUrl = value => {
     if (value.url && value.url.path) {
@@ -467,7 +467,7 @@ export const createPages = async ({ graphql, actions }) => {
 
   for (let i = 0; i < nodes.length; i++) {
     let {
-      translated: {
+      entityTranslation: {
         url,
         language: { id: language },
         ...fields
@@ -475,7 +475,7 @@ export const createPages = async ({ graphql, actions }) => {
       ...node
     } = nodes[i];
 
-    // Add the translated fields to the node data.
+    // Add the entityTranslation fields to the node data.
     try {
       node = {
         ...node,
@@ -485,7 +485,9 @@ export const createPages = async ({ graphql, actions }) => {
       };
     } catch (e) {
       throw new Error(
-        `Failed adding translated fields to node ${node.nid}: ${e.message}`
+        `Failed adding entityTranslation fields to node ${node.nid}: ${
+          e.message
+        }`
       );
     }
 
@@ -496,25 +498,25 @@ export const createPages = async ({ graphql, actions }) => {
           continue;
         }
 
-        // Flatten "translated" values.
-        if (node[fieldName].translated) {
-          node[fieldName] = flattenTranslated(node[fieldName]);
+        // Flatten "entityTranslation" values.
+        if (node[fieldName].entityTranslation) {
+          node[fieldName] = flattenTranslation(node[fieldName]);
         } else if (
           node[fieldName].entity &&
-          node[fieldName].entity.translated
+          node[fieldName].entity.entityTranslation
         ) {
-          node[fieldName] = flattenTranslated(node[fieldName].entity);
+          node[fieldName] = flattenTranslation(node[fieldName].entity);
         } else if (Array.isArray(node[fieldName]) && node[fieldName][0]) {
           if (
             node[fieldName][0].entity &&
-            node[fieldName][0].entity.translated
+            node[fieldName][0].entity.entityTranslation
           ) {
             node[fieldName] = node[fieldName].map(({ entity }) =>
-              flattenTranslated(entity)
+              flattenTranslation(entity)
             );
-          } else if (node[fieldName][0].translated) {
+          } else if (node[fieldName][0].entityTranslation) {
             node[fieldName] = node[fieldName].map(value =>
-              flattenTranslated(value)
+              flattenTranslation(value)
             );
           }
         }
