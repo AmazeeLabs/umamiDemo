@@ -1,4 +1,4 @@
-uuid: bff2498a-be1d-41ae-aa16-5715e9e7f83b
+uuid: 26a27e8b-157a-4648-8591-a0b382085102
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: true
-    bundle_settings:
-      untranslatable_fields_hide: '1'
+_core:
+  default_config_hash: 0wQkRfzyea2BPkoudJ9i45eN0okt2MKAs671vjDwWKI
 id: node.article
 target_entity_type_id: node
 target_bundle: article

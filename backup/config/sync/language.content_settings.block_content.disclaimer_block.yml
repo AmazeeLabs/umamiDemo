@@ -1,4 +1,4 @@
-uuid: cadba5f5-6505-4ce6-a304-9600d9714d2f
+uuid: 5aaccaaf-9aff-4ad9-9794-2b60eb6c9ccd
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: true
-    bundle_settings:
-      untranslatable_fields_hide: '0'
+_core:
+  default_config_hash: pYV_j3OTOlWBweKkB0jY9dB9C3aTUJZ903T91ZahX4w
 id: block_content.disclaimer_block
 target_entity_type_id: block_content
 target_bundle: disclaimer_block

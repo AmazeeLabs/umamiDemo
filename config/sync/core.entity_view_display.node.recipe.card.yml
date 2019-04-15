@@ -1,4 +1,4 @@
-uuid: b73f93bb-2969-44ae-9ed4-4a0a9534be4e
+uuid: 908b7003-e854-4dba-b410-9809fa9004a5
 langcode: en
 status: true
 dependencies:
@@ -21,7 +21,7 @@ dependencies:
     - responsive_image
     - user
 _core:
-  default_config_hash: EEI19CFnaW1hH_F9DsPEJFfVkU_KF0i8RI-0f0Lt-us
+  default_config_hash: Ez73wkxBmfPGIXo6Hq4KDu29RAcgJfLys2My8S5u1l8
 id: node.recipe.card
 targetEntityType: node
 bundle: recipe

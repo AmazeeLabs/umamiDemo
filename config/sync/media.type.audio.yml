@@ -1,9 +1,9 @@
-uuid: 3a16fdec-a766-48de-9404-55db01b9b000
+uuid: 879d349d-8eaa-4b53-818f-60a118ddaf60
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: RQ75tMARZvKiI0hge9SKZpZFi-dOzZyq0nlouHHBeLM
+  default_config_hash: eJw8n6Tk2tO3ZysuEeGR1gZa1yRffaZzR4t0Q7iNurs
 id: audio
 label: Audio
 description: 'A locally hosted audio file.'
@@ -12,4 +12,5 @@ queue_thumbnail_downloads: false
 new_revision: true
 source_configuration:
   source_field: field_media_audio_file
-field_map: {  }
+field_map:
+  name: name

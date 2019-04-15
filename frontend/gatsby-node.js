@@ -335,10 +335,15 @@ export const createPages = async ({ graphql, actions }) => {
 
     fragment ArticleFragment on Drupal_NodeArticle {
       body {
-        ...FieldBodyFragment
+        value: processed
+        summary: summaryProcessed
       }
       image: fieldImage {
-        ...FieldImageFragment
+        alt
+        title
+        width
+        height
+        url
       }
       tags: fieldTags {
         entity {
@@ -349,7 +354,8 @@ export const createPages = async ({ graphql, actions }) => {
 
     fragment PageFragment on Drupal_NodePage {
       body {
-        ...FieldBodyFragment
+        value: processed
+        summary: summaryProcessed
       }
     }
 
@@ -362,7 +368,11 @@ export const createPages = async ({ graphql, actions }) => {
       cookingTime:fieldCookingTime
       difficulty: fieldDifficulty
       image: fieldImage {
-        ...FieldImageFragment
+        alt
+        title
+        width
+        height
+        url
       }
       ingredients: fieldIngredients
       recipeInstruction: fieldRecipeInstruction {
@@ -385,19 +395,6 @@ export const createPages = async ({ graphql, actions }) => {
         path
         routed
       }
-    }
-
-    fragment FieldBodyFragment on Drupal_FieldNodeBody {
-      value: processed
-      summary: summaryProcessed
-    }
-
-    fragment FieldImageFragment on Drupal_FieldNodeFieldImage {
-      alt
-      title
-      width
-      height
-      url
     }
 
     fragment TaxonomyTermFragment on Drupal_TaxonomyTerm {
@@ -446,7 +443,7 @@ export const createPages = async ({ graphql, actions }) => {
   // Only cache the node if it has a translation for the given language.
   nodes = nodes.filter(node => !!node.entityTranslation);
 
-  // Flatten the node data.
+  // Flatten entity data.
   const flattenTranslation = ({ entityTranslation, ...rest }) => ({
     ...rest,
     ...entityTranslation
@@ -455,6 +452,15 @@ export const createPages = async ({ graphql, actions }) => {
     if (value.url && value.url.path) {
       const {
         url: { path: url },
+        ...rest
+      } = value;
+      return {
+        ...rest,
+        url
+      };
+    } else if (value.entityUrl && value.entityUrl.path) {
+      const {
+        entityUrl: { path: url },
         ...rest
       } = value;
       return {

@@ -1,4 +1,4 @@
-uuid: 32a9704d-ad0c-4eaf-b441-a3a24b4c4c96
+uuid: e5c48f87-763f-4489-8e29-771f6d5ec1ff
 langcode: en
 status: true
 dependencies:
@@ -6,16 +6,9 @@ dependencies:
     - block_content.type.banner_block
     - field.storage.block_content.field_banner_image
   module:
-    - content_translation
     - image
-third_party_settings:
-  content_translation:
-    translation_sync:
-      alt: alt
-      title: title
-      file: '0'
 _core:
-  default_config_hash: RVHsGyJPrgw7T4oaALBC0hhhLuj2C5Ex-kBhcDE_gtA
+  default_config_hash: QqAyxajD50F2l5mg8ljU9DCr-jzQiv2h2Bl3VmV5eZc
 id: block_content.banner_block.field_banner_image
 field_name: field_banner_image
 entity_type: block_content

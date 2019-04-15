@@ -1,4 +1,4 @@
-uuid: 68aa7adc-8f59-4ba3-b014-a10f900d4124
+uuid: 96758a4b-2836-4d4b-8024-cc85ea3658ea
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
     - image
     - user
 _core:
-  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+  default_config_hash: jLkMFqpbSJphJv4MfuLl3wbZ8EBl-5mcjak0erRZ5U0
 id: user.user.default
 targetEntityType: user
 bundle: user

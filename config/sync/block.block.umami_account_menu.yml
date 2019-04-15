@@ -1,4 +1,4 @@
-uuid: 2fb604f1-58f1-4f78-9ef2-72e49612ff0b
+uuid: b79c98e6-c806-4630-886d-c5fdd00db5c8
 langcode: en
 status: true
 dependencies:
@@ -9,11 +9,11 @@ dependencies:
   theme:
     - umami
 _core:
-  default_config_hash: 2zPj0o1Yh78nP8BHkvLWXoyN4KqsQ54BlHRxkiFMGoM
+  default_config_hash: Rq6NxuhkFzt-qV9HzBNhfwnuBFwj8Yq8sjYXUhUeV68
 id: umami_account_menu
 theme: umami
 region: pre_header
-weight: -6
+weight: 2
 provider: null
 plugin: 'system_menu_block:account'
 settings:
@@ -23,4 +23,5 @@ settings:
   label_display: '0'
   level: 1
   depth: 1
+  expand_all_items: false
 visibility: {  }

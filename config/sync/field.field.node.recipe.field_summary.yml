@@ -1,4 +1,4 @@
-uuid: e98fad8e-e617-4caf-ba57-5969d8303620
+uuid: 1ac3e990-067f-4690-83b1-28afe95ab5b2
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: w6F7yAQYNfF4z90zpYKAhXLoWqN9Xot8T0_HSbu2v3w
+  default_config_hash: E1ed_VCnnh6Q8TKaBaMx7T7WfRr0xTg19eccOk92Bew
 id: node.recipe.field_summary
 field_name: field_summary
 entity_type: node

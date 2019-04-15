@@ -1,4 +1,4 @@
-uuid: 63da44ae-a92d-4e8c-adfa-6e766c487d0d
+uuid: 352b2216-36db-4099-a20d-c23e0c0656e7
 langcode: en
 status: true
 dependencies:
@@ -20,7 +20,7 @@ dependencies:
     - responsive_image
     - user
 _core:
-  default_config_hash: bpKRGOvjbqmP1HM-RmpJFnnZUzGC76pN5ciDqtbhEDw
+  default_config_hash: DF_EXpEPNprL45MGKY5MV3BZc7lvQNLO5WwZAhMgqP8
 id: node.recipe.card_common_alt
 targetEntityType: node
 bundle: recipe

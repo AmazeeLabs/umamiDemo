@@ -1,4 +1,4 @@
-uuid: a51a6109-a352-4b42-b2e8-039d4952d26f
+uuid: c8f10b8b-4b5a-45cd-900c-8fb30c6c50fa
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: TW6g8rzfUhyYMcxewySDmwgdNNb2m6mdqyzd9L4xjGM
+  default_config_hash: s6Hju9aCzTsIKShDE0HNGBcc0rdeWVjLLw6acgwxB5w
 id: articles_aside
 label: 'Articles aside'
 module: views
@@ -140,7 +140,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
           group: 1
           exposed: false
           expose:

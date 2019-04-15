@@ -1,8 +1,8 @@
 country:
-  default: TW
+  default: ''
 first_day: 0
 timezone:
-  default: Asia/Taipei
+  default: UTC
   user:
     configurable: true
     warn: false

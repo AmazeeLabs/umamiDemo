@@ -1,19 +1,12 @@
-uuid: 258d7395-6459-4635-8e9c-eccb9009a14a
+uuid: 921c24e7-fd5d-41fb-8d9b-9e56c9fa8762
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.user.user_picture
   module:
-    - content_translation
     - image
     - user
-third_party_settings:
-  content_translation:
-    translation_sync:
-      alt: alt
-      title: title
-      file: '0'
 _core:
   default_config_hash: Iiq0AttdhgbebJwabSFwQQ1ORn64GoGz0xSZ_eyCJ8A
 id: user.user.user_picture
@@ -27,21 +20,21 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: 'pictures/[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
+  file_directory: 'pictures/[date:custom:Y]-[date:custom:m]'
   max_filesize: ''
+  alt_field: false
+  title_field: false
   max_resolution: ''
   min_resolution: ''
-  alt_field: true
-  alt_field_required: true
-  title_field: false
-  title_field_required: false
   default_image:
-    uuid: ''
+    uuid: null
     alt: ''
     title: ''
     width: null
     height: null
+  alt_field_required: false
+  title_field_required: false
   handler: 'default:file'
   handler_settings: {  }
 field_type: image

@@ -1,4 +1,4 @@
-uuid: d8bdd565-3ccb-4ce6-ac15-d152aa9e7128
+uuid: 83052f44-5007-440a-a81f-3dde54fb1131
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: qjNHKIobCA-7mrC5j1aXsVPxgSPXHN4gEHnonm46zOQ
+  default_config_hash: duY_-3h8g7XQKhPi6Zzvrwb1r16qYeTZqYHnRSHIv4g
 id: promoted_items
 label: 'Promoted Items'
 module: views
@@ -364,7 +364,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
           group: 1
           exposed: false
           expose:
@@ -519,7 +519,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
           group: 1
           exposed: false
           expose:

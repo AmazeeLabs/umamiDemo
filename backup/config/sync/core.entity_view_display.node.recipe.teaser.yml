@@ -1,4 +1,4 @@
-uuid: cacde1e1-e72e-44b1-ae53-eefad80fa99c
+uuid: 85d38fb7-be69-40cc-8a26-95d1bb643e59
 langcode: en
 status: true
 dependencies:
@@ -18,7 +18,7 @@ dependencies:
   module:
     - user
 _core:
-  default_config_hash: FDOnsorEGKX97ONKFej_1SRRL1s1BGNsVL4syRDNfmA
+  default_config_hash: H4K8PSiJV2k4Kj_UfDOP0bB2jkW34LQt_GgXwO3_qhs
 id: node.recipe.teaser
 targetEntityType: node
 bundle: recipe

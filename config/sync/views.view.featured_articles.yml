@@ -1,4 +1,4 @@
-uuid: 734e8140-9c92-446c-8db1-0bfbdaa9c0a2
+uuid: 60dba55d-569a-44d1-b1b4-da498f0c54c3
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: GxU4SSRDm1isFT9spXMSwWJPWbTdYxB0pmBpfJXBi2g
+  default_config_hash: xpzP6hLV6g3cT1MSWBPwDQ-IXXH-WUfYJvKOTy6sK3c
 id: featured_articles
 label: 'Featured Articles'
 module: views
@@ -154,7 +154,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
           group: 1
           exposed: false
           expose:

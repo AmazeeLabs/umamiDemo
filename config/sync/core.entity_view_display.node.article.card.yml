@@ -1,4 +1,4 @@
-uuid: 6c407867-9d65-4f05-8914-10e5dff81aa6
+uuid: 09db199e-66e3-48f8-8167-a684f4e24be6
 langcode: en
 status: true
 dependencies:
@@ -13,7 +13,7 @@ dependencies:
     - responsive_image
     - user
 _core:
-  default_config_hash: 9jVcnp2J-xq3jfkx4uHlLOQYcMuD_xTPTu5JTPIDMwk
+  default_config_hash: iA2xCOIvrAgAS2hwdf8yuqsmx8pOwEuUFiXX3RJi9Kc
 id: node.article.card
 targetEntityType: node
 bundle: article

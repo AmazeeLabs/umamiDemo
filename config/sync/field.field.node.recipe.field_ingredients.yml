@@ -1,4 +1,4 @@
-uuid: 01fb3d79-dfd4-4fb5-a056-43a8d640ae9f
+uuid: 60bdc1d4-3ab4-4966-ad4b-2c9cdbc2ef0b
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_ingredients
     - node.type.recipe
 _core:
-  default_config_hash: psfKUXZWX3NXkQ8lOkwPKHSVfQtjvtybVdrhdyOrMxg
+  default_config_hash: qpxijO-cv11BYqtVXON2aYLfLDODClUq3Sux3EJrUEk
 id: node.recipe.field_ingredients
 field_name: field_ingredients
 entity_type: node

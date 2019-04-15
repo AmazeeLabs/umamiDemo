@@ -1,4 +1,4 @@
-uuid: 4afc4413-e2c8-4d2b-8888-3fbbb0e7f4b8
+uuid: 17d17670-ddcd-481b-b3ff-822b13651526
 langcode: en
 status: true
 dependencies:
@@ -6,14 +6,7 @@ dependencies:
     - field.storage.node.field_image
     - node.type.recipe
   module:
-    - content_translation
     - image
-third_party_settings:
-  content_translation:
-    translation_sync:
-      alt: alt
-      title: title
-      file: '0'
 _core:
   default_config_hash: MIGyvTtO79nt-wyhOztq7W4THL5MbTI-XpNZj6O9v9k
 id: node.recipe.field_image

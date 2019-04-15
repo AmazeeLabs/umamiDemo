@@ -1,4 +1,4 @@
-uuid: eb73d9f0-fd1f-4477-8ed2-30a06bfbed4c
+uuid: b1d0211d-00b5-473f-84b5-119bbd875ef1
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   module:
     - content_moderation
 _core:
-  default_config_hash: ggUbiGdzjf-1VB4Ma-yzoLtmIF0bWBB_zD8Ims4_4aE
+  default_config_hash: 5JoZm8I35WErhx6o0nyhs-bAjerN8GoyKibXHKCs9Oc
 id: editorial
 label: Editorial
 type: content_moderation
@@ -68,3 +68,4 @@ type_settings:
       - article
       - page
       - recipe
+  default_moderation_state: draft

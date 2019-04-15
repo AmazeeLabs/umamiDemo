@@ -1,4 +1,4 @@
-uuid: 25200571-dce0-46e2-a8e6-375f6bea0a07
+uuid: 00226e88-81b4-415c-9d01-9e9dc9871d16
 langcode: en
 status: true
 dependencies:
@@ -15,13 +15,14 @@ dependencies:
     - field.field.node.recipe.field_tags
     - image.style.thumbnail
     - node.type.recipe
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - image
     - path
     - text
 _core:
-  default_config_hash: dEPt1UG4_Zht-Yx8TcMWySz3CNe76s9sXPoflXEFAqE
+  default_config_hash: KYOtdJgBuToj8chyUcPMvEJyRM5-ihNS7TRRAiZjisM
 id: node.recipe.default
 targetEntityType: node
 bundle: recipe
@@ -158,6 +159,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 12

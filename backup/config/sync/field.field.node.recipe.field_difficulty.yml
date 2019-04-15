@@ -1,4 +1,4 @@
-uuid: 1be4e72b-d70b-4727-afb1-65c3fd697a89
+uuid: a78f92b1-1902-446d-8d49-c938227e6ea2
 langcode: en
 status: true
 dependencies:
@@ -16,7 +16,7 @@ bundle: recipe
 label: Difficulty
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value:
   -
     value: medium

@@ -1,4 +1,4 @@
-uuid: 0407f6f1-42d2-40f8-adf2-db031d0e8c81
+uuid: 4218a2af-bc09-4ded-acd1-dc2fec46fa7f
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - language
   theme:
     - umami
+_core:
+  default_config_hash: DqYisvDJbN_j5fWBCF6RVDYi5ZV62Yy8DABdtvRigME
 id: languageswitcher
 theme: umami
 region: pre_header

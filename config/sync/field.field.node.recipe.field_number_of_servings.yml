@@ -1,4 +1,4 @@
-uuid: e0f1f50b-e6d0-48c3-9460-e87542395b09
+uuid: 660cdc0c-f6a4-4d2d-a8ba-a13ee21f6cca
 langcode: en
 status: true
 dependencies:
@@ -14,7 +14,7 @@ bundle: recipe
 label: 'Number of servings'
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

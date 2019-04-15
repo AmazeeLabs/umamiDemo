@@ -1,4 +1,4 @@
-uuid: 7ec03175-3008-4049-b7b3-0899624f45e3
+uuid: 12ea4521-d388-458d-a270-9eda619a1b95
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - taxonomy
     - user
 _core:
-  default_config_hash: cySaJWvP3c-ytLDGbX3hkY_j8vXX1DX5kcCdupThZos
+  default_config_hash: p9n1DGiLQVsubXcpsMcCCNQgA413bhmlOr7dKp740Rw
 id: recipe_collections
 label: 'Recipe Collections'
 module: views
@@ -135,7 +135,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
           group: 1
           exposed: false
           expose:

@@ -1,4 +1,4 @@
-uuid: 06aa3c78-acef-468e-a589-d6eb85cb44bc
+uuid: d38cbc0b-6a56-40da-a2d0-f24a0bf9c9ed
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: true
-    bundle_settings:
-      untranslatable_fields_hide: '0'
+_core:
+  default_config_hash: rSI5WTsW2S6K9n3i6_Ul-auHIO5onTjPknfThX3ON-U
 id: taxonomy_term.recipe_category
 target_entity_type_id: taxonomy_term
 target_bundle: recipe_category

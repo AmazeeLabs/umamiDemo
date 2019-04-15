@@ -1,4 +1,4 @@
-uuid: 58684f07-e648-449f-afc1-843e80fb4a00
+uuid: cd1ab77b-7057-4323-96d7-e961428c9e34
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   theme:
     - umami
 _core:
-  default_config_hash: V_A9DLAFRV_t_apxzqNfQOEPYgPTWrJcMp_D4TKfsoU
+  default_config_hash: aON0yqk63ga8MocfOehPS4McI4tOXUuz0lvkNgcZJn4
 id: umami_footer
 theme: umami
 region: footer
@@ -23,4 +23,5 @@ settings:
   label_display: '1'
   level: 1
   depth: 0
+  expand_all_items: false
 visibility: {  }

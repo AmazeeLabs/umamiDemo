@@ -1,4 +1,4 @@
-uuid: 13d4930a-6fb8-4512-8c80-c133f59cbbb3
+uuid: cad162e1-889e-48c7-ac4e-42b7ba53c03b
 langcode: en
 status: true
 dependencies:
@@ -26,12 +26,6 @@ display:
         type: tag
       query:
         type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
       exposed_form:
         type: basic
         options:

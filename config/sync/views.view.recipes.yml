@@ -1,4 +1,4 @@
-uuid: 6902e01b-c613-461c-89be-2fe4b3517035
+uuid: 7bec66da-9687-45e5-8442-e5fbfc8969a3
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: aQhlhITYWCfgVvW3Jhw2_PhMi6CtaFOCjKJi2X0lU2I
+  default_config_hash: PtbG_KZ5_CD_zUmVn1OkWvhuVMhVCQnOkNF8Y2HHg_g
 id: recipes
 label: Recipes
 module: views
@@ -154,7 +154,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
           group: 1
           exposed: false
           expose:

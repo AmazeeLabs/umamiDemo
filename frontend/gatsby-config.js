@@ -29,9 +29,9 @@ module.exports = {
         url: `${process.env.SB_BASE_URL}/graphql`,
         // @TODO Add authorization; turn off anonymous graphql query permission.
         headers: {
-          // Authorization: `Basic ${btoa(
-          //   process.env.SB_ADMIN_USER + ":" + process.env.SB_ADMIN_PASS
-          // )}`
+          Authorization: `Basic ${btoa(
+            process.env.SB_ADMIN_USER + ":" + process.env.SB_ADMIN_PASS
+          )}`
         }
       }
     },

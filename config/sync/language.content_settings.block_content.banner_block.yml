@@ -1,4 +1,4 @@
-uuid: 460d8cab-9498-4229-b0da-7093288e501b
+uuid: cdac729d-41e2-4f6b-b5ba-41147a831c35
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: true
-    bundle_settings:
-      untranslatable_fields_hide: '0'
+_core:
+  default_config_hash: G3u6fc7JZoDvaeSgwA-ik8RL5Z2B6-ItEtSuicDgobw
 id: block_content.banner_block
 target_entity_type_id: block_content
 target_bundle: banner_block

@@ -1,4 +1,4 @@
-uuid: 6377c38c-cb66-4e7e-bf08-10ee8e37c51e
+uuid: 74d3f1d6-0682-407f-b095-8bf76daa790a
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: 1UIjNd6iIhogbx50cJPDN7Me8cUQx2xCP2IBgrKG6Ms
+  default_config_hash: epCHwxXumnS0FQR7duKz2_r2nkW5CJxTracGsaPMuzE
 id: moderated_content
 label: 'Moderated content'
 module: views
@@ -506,10 +506,10 @@ display:
           entity_type: node
           plugin_id: entity_operations
       filters:
-        latest_revision:
-          id: latest_revision
+        latest_translation_affected_revision:
+          id: latest_translation_affected_revision
           table: node_revision
-          field: latest_revision
+          field: latest_translation_affected_revision
           relationship: none
           group_type: group
           admin_label: ''
@@ -542,7 +542,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           entity_type: node
-          plugin_id: latest_revision
+          plugin_id: latest_translation_affected_revision
         title:
           id: title
           table: node_field_revision

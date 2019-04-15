@@ -1,4 +1,4 @@
-uuid: c7c33826-1d38-47c3-abd5-1ed2b95ccf7d
+uuid: 24b59ad7-93ae-4f3c-83e0-cd7d79deb6fd
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: JGfJhp1GQ95jeCKChKVTLBjB593GRjSrlYtt9KZM79Q
+  default_config_hash: V6TOUubOCSSb6pOeFZoyN3HVM2emmXMylqGXggESAQQ
 id: block_content.disclaimer_block.default
 targetEntityType: block_content
 bundle: disclaimer_block

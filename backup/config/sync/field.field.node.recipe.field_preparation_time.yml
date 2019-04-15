@@ -1,4 +1,4 @@
-uuid: c84f907e-0130-4c38-9627-b7d533f4e3ff
+uuid: 149b5318-04ed-4bd0-ae9d-3fe056c112ff
 langcode: en
 status: true
 dependencies:
@@ -14,7 +14,7 @@ bundle: recipe
 label: 'Preparation time'
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

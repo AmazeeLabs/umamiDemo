@@ -1,16 +1,17 @@
-uuid: bafb5fe7-0795-40d5-84f5-0aa8ee530682
+uuid: af309568-70e2-449b-925b-f6ecdd68cd5e
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.page.body
     - node.type.page
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - path
     - text
 _core:
-  default_config_hash: 3WmLrpU3VydASdaGw-UDEIy6chJWX8MJsB9EpLlxFSM
+  default_config_hash: KsTtesILpoxW7-Sdo99rzrCmW7vG3VKa3yI_JsuRyNg
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -79,6 +80,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 1

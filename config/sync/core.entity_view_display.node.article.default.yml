@@ -1,4 +1,4 @@
-uuid: b035e1f6-404f-4e57-9789-23fb582fb09f
+uuid: 39c6d3c6-63ee-4629-b137-bd5d00309261
 langcode: en
 status: true
 dependencies:
@@ -13,7 +13,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: X-9dWQI1cyYgRzCEZCAczb8SzaDHACxnVlkH7EmywD4
+  default_config_hash: xQrNNdbWnAkULFqNm5BSPy2Sewz60A3Rqyz7d4Bnjb8
 id: node.article.default
 targetEntityType: node
 bundle: article

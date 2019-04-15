@@ -1,4 +1,4 @@
-uuid: e71297b4-70c1-40f6-9483-ace4c3e9006e
+uuid: eeaa9543-7921-4d92-b8f8-89b9b83b0cb9
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
     - node.type.recipe
     - taxonomy.vocabulary.tags
 _core:
-  default_config_hash: LftOP0eXVyIXDfjr8LCEovubuLjFSzjRh4x0d4RaLDw
+  default_config_hash: ShgeyME31DNNEJgj6AgnTefTI7bAvNcy62InWs2z-7c
 id: node.recipe.field_tags
 field_name: field_tags
 entity_type: node
