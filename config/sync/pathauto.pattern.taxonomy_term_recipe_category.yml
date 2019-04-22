@@ -1,0 +1,23 @@
+uuid: f6e76896-c79b-472f-a34f-8bca4b9a2763
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: taxonomy_term_recipe_category
+label: 'Taxonomy term: Recipe category'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/recipe-category/[term:name]'
+selection_criteria:
+  3d42860d-3aeb-4af9-ac36-44dc753b1724:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      recipe_category: recipe_category
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 3d42860d-3aeb-4af9-ac36-44dc753b1724
+selection_logic: and
+weight: -5
+relationships: {  }
