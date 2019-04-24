@@ -33,55 +33,50 @@ export const createPages = async ({ graphql, actions }) => {
     typeName: "Drupal"
   };
 
-  const pathMapping = {
-    menuLink: [
-      {
-        test: /^\/articles$/,
-        component: path.resolve(`./src/templates/index-articles.js`)
-      },
-      {
-        test: /^\/recipes$/,
-        component: path.resolve(`./src/templates/index-recipes.js`)
-      },
-      {
-        test: /^\/$/,
-        component: path.resolve(`./src/templates/index.js`)
-      }
-    ],
-    node: [
-      {
-        test: /^\/articles\/.+$/,
-        component: path.resolve(`./src/templates/node-article.js`)
-      },
-      {
-        test: /^\/recipes\/.+$/,
-        component: path.resolve(`./src/templates/node-recipe.js`)
-      },
-      {
-        test: /^\/.+$/,
-        component: path.resolve(`./src/templates/node-page.js`)
-      }
-    ],
-    taxonomyTerm: [
-      {
-        test: /^\/recipe\-category\/.+$/,
-        component: path.resolve(
-          `./src/templates/taxonomy-term-recipe-category.js`
-        )
-      },
-      {
-        test: /^\/tags\/.+$/,
-        component: path.resolve(`./src/templates/taxonomy-term-tags.js`)
-      }
-    ]
-  };
+  const pathMapping = [
+    {
+      test: /^\/articles\/.+$/,
+      component: path.resolve(`./src/templates/node-article.js`)
+    },
+    {
+      test: /^\/recipes\/.+$/,
+      component: path.resolve(`./src/templates/node-recipe.js`)
+    },
+    {
+      test: /^\/recipe\-category\/.+$/,
+      component: path.resolve(
+        `./src/templates/taxonomy-term-recipe-category.js`
+      )
+    },
+    {
+      test: /^\/tags\/.+$/,
+      component: path.resolve(`./src/templates/taxonomy-term-tags.js`)
+    },
+    {
+      test: /^\/articles$/,
+      component: path.resolve(`./src/templates/index-articles.js`)
+    },
+    {
+      test: /^\/recipes$/,
+      component: path.resolve(`./src/templates/index-recipes.js`)
+    },
+    {
+      test: /^\/$/,
+      component: path.resolve(`./src/templates/index.js`)
+    },
+    // This is the catch-all since Page node URLs follow no pattern.
+    {
+      test: /^\/.+$/,
+      component: path.resolve(`./src/templates/node-page.js`)
+    }
+  ];
 
-  const getComponent = (entity, language, slug) => {
+  const getComponent = (language, slug) => {
     const url =
       slug === `/${language}` ? "/" : slug.replace(`/${language}/`, "/");
-    for (let i = 0; i < pathMapping[entity].length; i++) {
-      if (pathMapping[entity][i].test.test(url)) {
-        return pathMapping[entity][i].component;
+    for (let i = 0; i < pathMapping.length; i++) {
+      if (pathMapping[i].test.test(url)) {
+        return pathMapping[i].component;
       }
     }
     throw new Error(`No template found for ${slug}`);
@@ -198,7 +193,7 @@ export const createPages = async ({ graphql, actions }) => {
     // language negotiation with the browser.
     "/": {
       path: "/",
-      component: getComponent("menuLink", defaultLanguage.id, "/"),
+      component: getComponent(defaultLanguage.id, "/"),
       context: {
         language: defaultLanguage.enum
       }
@@ -322,7 +317,7 @@ export const createPages = async ({ graphql, actions }) => {
         setLastChanged(changed);
         slugs[url] = {
           path: url,
-          component: getComponent("taxonomyTerm", language.id, url),
+          component: getComponent(language.id, url),
           context: {
             language: language.enum
           }
@@ -412,7 +407,7 @@ export const createPages = async ({ graphql, actions }) => {
         if (published) {
           slugs[url] = {
             path: url,
-            component: getComponent("node", language.id, url),
+            component: getComponent(language.id, url),
             context: {
               language: language.enum
             }
