@@ -209,6 +209,7 @@ export const createPages = async ({ graphql, actions }) => {
             umami {
               menuByName(name: "main", language: $language) {
                 links {
+                  label
                   url {
                     path
                   }
@@ -229,15 +230,18 @@ export const createPages = async ({ graphql, actions }) => {
       }
 
       console.log(` Retrieved ${language.name} menu links.`);
-      result.data.umami.menuByName.links.forEach(({ url: { path: url } }) => {
-        slugs[url] = {
-          path: url,
-          component: getComponent("menuLink", language.id, url),
-          context: {
-            language: language.enum
-          }
-        };
-      });
+      result.data.umami.menuByName.links.forEach(
+        ({ label: title, url: { path: url } }) => {
+          slugs[url] = {
+            path: url,
+            component: getComponent(language.id, url),
+            context: {
+              language: language.enum,
+              title
+            }
+          };
+        }
+      );
     } catch (error) {
       console.error(
         `\nGraphQL query "menuLinksQuery(${language.name})" failed!`
