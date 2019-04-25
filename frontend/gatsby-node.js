@@ -33,6 +33,7 @@ export const createPages = async ({ graphql, actions }) => {
     typeName: "Drupal"
   };
 
+  // Specify how Drupal-configured paths should map to React components.
   const pathMapping = [
     {
       test: /^\/articles\/.+$/,
