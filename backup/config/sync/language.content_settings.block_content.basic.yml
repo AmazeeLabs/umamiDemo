@@ -9,6 +9,8 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
 _core:
   default_config_hash: 3Lw85WiS5-LM4WyfNIZMtBlxjvk9cgR6hhTIbat-kJQ
 id: block_content.basic

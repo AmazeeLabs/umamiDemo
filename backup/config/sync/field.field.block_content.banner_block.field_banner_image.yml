@@ -6,7 +6,14 @@ dependencies:
     - block_content.type.banner_block
     - field.storage.block_content.field_banner_image
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 _core:
   default_config_hash: QqAyxajD50F2l5mg8ljU9DCr-jzQiv2h2Bl3VmV5eZc
 id: block_content.banner_block.field_banner_image

@@ -21,7 +21,7 @@
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/console": "^1.0.2",
-        "drupal/core": "^8.7.0@RC",
+        "drupal/core": "^8.7.4",
         "drupal/pathauto": "^1.4",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
@@ -29,7 +29,7 @@
         "webmozart/path-util": "^2.3"
     },
     "require-dev": {
-        "webflo/drupal-core-require-dev": "^8.6.0"
+        "webflo/drupal-core-require-dev": "^8.7.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -88,6 +88,11 @@
             "drush/Commands/{$name}": [
                 "type:drupal-drush"
             ]
+        },
+        "patches": {
+            "drupal/graphql": {
+                "Set the default langcode for the translation manager and the configuration language for the language manager when executing a callable in a language context.": "https://patch-diff.githubusercontent.com/raw/drupal-graphql/graphql/pull/809.patch"
+            }
         },
         "drupal-scaffold": {
             "initial": {

@@ -9,6 +9,8 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
 _core:
   default_config_hash: XuiNUBeexJIZ0pGEA4kaHE5WsRxd4p87Igxh8cE_eDU
 id: node.recipe

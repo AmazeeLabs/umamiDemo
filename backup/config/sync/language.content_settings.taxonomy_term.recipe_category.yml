@@ -9,6 +9,8 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
 _core:
   default_config_hash: rSI5WTsW2S6K9n3i6_Ul-auHIO5onTjPknfThX3ON-U
 id: taxonomy_term.recipe_category

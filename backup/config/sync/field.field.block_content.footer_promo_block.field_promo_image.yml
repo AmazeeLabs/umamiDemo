@@ -6,7 +6,14 @@ dependencies:
     - block_content.type.footer_promo_block
     - field.storage.block_content.field_promo_image
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 _core:
   default_config_hash: aDC2otQbjpXPikkXgzpdymN4Xi253X2915mTxMGI95o
 id: block_content.footer_promo_block.field_promo_image

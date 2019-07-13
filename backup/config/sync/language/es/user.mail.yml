@@ -20,6 +20,7 @@ status_activated:
   body: "[user:display-name],\r\n\r\nSu cuenta en [site:name] ha sido activada.\r\n\r\nUsted puede ahora iniciar sesión haciendo click en este enlace o copiándolo y pegándolo en su navegador:\r\n\r\n[user:one-time-login-url]\r\n\r\nEste enlace solo puede ser usado una vez para iniciar sesión y lo llevará a usted a una página donde podrá establecer su clave personal.\r\n\r\nDespués de establecer su clave personal, usted podrá iniciar sesión en [site:login-url] utilizando:\r\n\r\nusuario: [user:account-name]\r\nclave personal: Your password\r\n\r\n--  Equipo [site:name]"
   subject: 'Detalles de cuenta para [user:display-name] en [site:name] (aprobado)'
 status_blocked:
+  body: "[user:display-name],\r\n\r\nSu cuenta en [site:name] ha sido bloqueada.\r\n\r\n--  El equipo de [site:name]"
   subject: 'Detalles de la cuenta de [user:display-name] en [site:name] (bloqueada)'
 status_canceled:
   body: "[user:display-name],\r\n\r\nSu cuenta en [site:name] ha sido cancelada.\r\n\r\n--  El equipo de [site:name]"
