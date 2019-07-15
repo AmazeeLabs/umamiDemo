@@ -191,7 +191,7 @@ export const createPages = async ({ graphql, actions }) => {
 
   const slugs = {
     // @TODO Replace this duplicate build of the homepage with a page that does
-    // language negotiation with the browser.
+    //   language negotiation with the browser.
     "/": {
       path: "/",
       component: getComponent(defaultLanguage.id, "/"),
