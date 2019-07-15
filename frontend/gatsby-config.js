@@ -8,6 +8,24 @@ module.exports = {
     author: `@johnalbin`
   },
   plugins: [
+    {
+      // Documentation: https://www.gatsbyjs.org/packages/gatsby-source-graphql/
+      resolve: "gatsby-source-graphql",
+      options: {
+        // The names of all types in the remote schema will be prefixed with this word.
+        typeName: `Drupal`,
+        // The entire remote schema is available under this field.
+        fieldName: `umami`,
+        // Endpoint URL.
+        url: `${process.env.SB_BASE_URL}/graphql`,
+        headers: {
+          Authorization: `Basic ${btoa(
+            process.env.SB_ADMIN_USER + ":" + process.env.SB_ADMIN_PASS
+          )}`
+        }
+      }
+    },
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     {
       resolve: "gatsby-plugin-root-import",
@@ -18,34 +36,9 @@ module.exports = {
         templates: path.join(__dirname, "src/templates")
       }
     },
-    {
-      resolve: "gatsby-source-graphql",
-      options: {
-        // This type will contain remote schema Query type
-        typeName: `Drupal`,
-        // This is field under which it's accessible
-        fieldName: `umami`, // process.env.SB_PROJECT_NAME,
-        // Url to query from
-        url: `${process.env.SB_BASE_URL}/graphql`,
-        // @TODO Add authorization; turn off anonymous graphql query permission.
-        headers: {
-          Authorization: `Basic ${btoa(
-            process.env.SB_ADMIN_USER + ":" + process.env.SB_ADMIN_PASS
-          )}`
-        }
-      }
-    },
+    // A Gatsby plugin to automatically make the source-graphql parts of your
+    // application available as a live preview.
     // `gatsby-plugin-graphql-preview`,
-    // `gatsby-transformer-json`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `data`,
-    //     path: `${__dirname}/src/data`,
-    //     ignore: [`**/\.*`] // ignore files starting with a dot
-    //   }
-    // },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
