@@ -33,8 +33,8 @@
   "license": "MIT",
   "scripts": {
     "build": "npx --node-arg '-r esm' gatsby build",
-    "dev": "npx --node-arg '-r esm' gatsby develop",
-    "start": "npx --node-arg '-r esm' npm run develop",
+    "develop": "npx --node-arg '-r esm' gatsby develop",
+    "start": "yarn run develop",
     "serve": "npx --node-arg '-r esm' gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },

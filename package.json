@@ -14,6 +14,7 @@
     "webpack-dev-server": "^3.1.9"
   },
   "scripts": {
+    "build": "rm -rf docs frontend/public; cd frontend; yarn run build; cp -r public ../docs",
     "webpack-dev": "drush webpack:serve --docker --dev-server-host=cli"
   }
 }
