@@ -8,30 +8,9 @@
 // https://www.gatsbyjs.org/docs/gatsby-lifecycle-apis/
 
 import path from "path";
-import { promises as fsPromises } from "fs";
-// import gatsbyConfig from "./gatsby-config";
 
 export const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-
-  // We could find the config values for gatsby-source-graphql.
-  // for (let i = 0; i < gatsbyConfig.plugins.length; i++) {
-  //   if (gatsbyConfig.plugins[i].resolve === "gatsby-source-graphql") {
-  //     gatsbySourceGraphQL = {
-  //       // All of Drupal's graphQL data is available underneath
-  //       // the configured fieldName.
-  //       fieldName: gatsbyConfig.plugins[i].options.fieldName,
-  //       // gatsby-source-graphql adds the configured typeName
-  //       // and an underscore to all Drupal type names.
-  //       typeName: gatsbyConfig.plugins[i].options.typeName
-  //     };
-  //   }
-  // }
-  // But hard-coding is easier.
-  const gatsbySourceGraphQL = {
-    fieldName: "umami",
-    typeName: "Drupal"
-  };
 
   // Specify how Drupal-configured paths should map to React components.
   const pathMapping = [
@@ -157,7 +136,7 @@ export const createPages = async ({ graphql, actions }) => {
       throw result.errors;
     }
 
-    result = result.data[gatsbySourceGraphQL.fieldName];
+    result = result.data.umami;
 
     // Store the languages.
     for (let i = 0; i < result.availableLanguages.length; i++) {
@@ -452,7 +431,7 @@ export const createPages = async ({ graphql, actions }) => {
           slug.path
         }`
       );
-      // createPage(slug);
+      createPage(slug);
     }
   } catch (error) {
     console.error(`\nGatsby createPage build failed!`);

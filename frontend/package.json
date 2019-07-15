@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "umami-demo-frontend",
+  "description": "A Gatsby/Drupal/GraphQL experiment",
+  "version": "1.0.0",
+  "author": "JohnAlbin <virtually.johnalbin@gmail.com",
   "dependencies": {
     "btoa": "^1.2.1",
     "esm": "^3.2.11",
@@ -40,9 +39,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/amazeelabs/umamiDemo"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/amazeelabs/umamiDemo/issues"
   }
 }
