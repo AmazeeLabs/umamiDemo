@@ -14,6 +14,10 @@ This is an experiment to try to out the integration between Gatsby and Drupal us
 
 Discussions and code improvements are welcome!
 
+Specifically, we would like to:
+- Create a `using-drupal-graphql` example, using the Drupal GraphQL 8.x-3.0 module, that goes into Gatsby's git repo along side the [Drupal-core-only `using-drupal` example](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-drupal).
+- Upgrade the demo to use GraphQL 8.x-4.0 module (once it's released).
+
 ## Installation
 
 There's lots of different "easy-to-setup development environments". This demo site uses Silverback which requires direnv and sqlite. You don't have to use Silverback; you just need a Drupal 8.7.x website installed with the Umami install profile and the Drupal GraphQL. Then can use the Gatsby files in this demo with the website you've setup; just change the URL configured in `gatsby-config.js`.
