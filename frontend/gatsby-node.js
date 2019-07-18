@@ -421,6 +421,14 @@ export const createPages = async ({ graphql, actions }) => {
   }
   await Promise.all(queries);
 
+  // Build temp navigation.
+  let nav = [];
+  for (let key in slugs) {
+    const slug = slugs[key];
+    nav.push(`<li><a href="${slug.path}">${slug.path}</a></li>`);
+  }
+  nav = `<ul>${nav.join('')}</ul>`;
+
   // Build pages.
   try {
     for (let key in slugs) {
@@ -431,7 +439,14 @@ export const createPages = async ({ graphql, actions }) => {
           slug.path
         }`
       );
-      createPage(slug);
+      // createPage(slug);
+      createPage({
+        ...slug,
+        context: {
+          ...slug.context,
+          nav
+        }
+      })
     }
   } catch (error) {
     console.error(`\nGatsby createPage build failed!`);

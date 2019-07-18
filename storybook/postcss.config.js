@@ -5,6 +5,4 @@ module.exports = {
 			url: 'inline',
 		}
 	},
-	module: true,
-	url: false
 };
