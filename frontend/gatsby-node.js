@@ -7,9 +7,9 @@
 // Gatsby build steps:
 // https://www.gatsbyjs.org/docs/gatsby-lifecycle-apis/
 
-import path from "path";
+const path = require("path");
 
-export const createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   // Specify how Drupal-configured paths should map to React components.

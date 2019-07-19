@@ -5,7 +5,6 @@
   "author": "JohnAlbin <virtually.johnalbin@gmail.com",
   "dependencies": {
     "btoa": "^1.2.1",
-    "esm": "^3.2.11",
     "gatsby": "^2.1.5",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-graphql-preview": "^2.1.0",
@@ -31,10 +30,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npx --node-arg '-r esm' gatsby build",
-    "develop": "npx --node-arg '-r esm' gatsby develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
     "start": "yarn run develop",
-    "serve": "npx --node-arg '-r esm' gatsby serve",
+    "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "repository": {
