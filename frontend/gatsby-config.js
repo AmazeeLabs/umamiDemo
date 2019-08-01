@@ -17,11 +17,9 @@ module.exports = {
         // The entire remote schema is available under this field.
         fieldName: `umami`,
         // Endpoint URL.
-        url: `${process.env.SB_BASE_URL}/graphql`,
+        url: `http://127.0.0.1:8888/graphql`,
         headers: {
-          Authorization: `Basic ${btoa(
-            process.env.SB_ADMIN_USER + ":" + process.env.SB_ADMIN_PASS
-          )}`
+          Authorization: `Basic ${btoa("api-user:api-user")}`
         }
       }
     },

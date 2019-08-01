@@ -20,24 +20,19 @@ Specifically, we would like to:
 
 ## Installation
 
-There's lots of different "easy-to-setup development environments". This demo site uses Silverback which requires direnv and sqlite. You don't have to use Silverback; you just need a Drupal 8.7.x website installed with the Umami install profile and the Drupal GraphQL. Then can use the Gatsby files in this demo with the website you've setup; just change the URL configured in `gatsby-config.js`.
+There's lots of different "easy-to-setup development environments". This demo site uses drush to serve the website. You don't have to use drush; you just need a Drupal 8.7.x website installed with the Umami install profile and the Drupal GraphQL. Then can use the Gatsby files in this demo with the website you've setup; just change the URL configured in `gatsby-config.js`.
 
 #### Prerequisites
 
-1. Install `direnv`
-    - For Mac OS X homebrew users: `brew install direnv`
-    - For other environments, see https://direnv.net/index.html#install
-2. Configure `direnv` by following the instructions at https://direnv.net/index.html#setup
-3. Install the [Drush launcher](https://github.com/drush-ops/drush-launcher). Alternatively, when the installation instructions say to run `drush`, run `./vendor/bin/drush` instead.
+1. Install the [Drush launcher](https://github.com/drush-ops/drush-launcher). Alternatively, when the installation instructions say to run `drush`, run `./vendor/bin/drush` instead.
+2. Install [Composer](https://getcomposer.org/).
 
 #### Drupal install
 
-1. Clone this repository and `cd` into its directory.
-2. Run `direnv allow` (this step won't work until you setup the prerequisites.)
-3. Setup the Drupal install with `composer install`
-4. Delete the `web/sites/default` folder and copy the `backup/default` folder to `web/sites/`.
-5. Start the Drupal site with `drush serve`
-6. `drush uli` will load the site in your browser and log you in as admin.
+1. Clone this repository using a recent version of Git. (If you are using an older version of Git, you will also need to run `git submodule init` and `git submodule update` after you clone the repo.)
+2. Go into the `backend` folder and setup the Drupal install with `composer install`
+3. Start the Drupal site with `drush serve`
+4. Optionally, `drush uli --uri http://127.0.0.1:8888` will load the site in your browser and log you in as admin.
 
 #### Gatsby install
 
