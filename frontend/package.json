@@ -1,6 +1,6 @@
 {
-  "name": "umami-demo-frontend",
-  "description": "A Gatsby/Drupal/GraphQL experiment",
+  "name": "gatsby-example-using-drupal-graphql",
+  "description": "Gatsby example site using Drupal with the GraphQL 3.x module",
   "version": "1.0.0",
   "author": "JohnAlbin <virtually.johnalbin@gmail.com",
   "dependencies": {
@@ -28,15 +28,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "yarn run develop",
+    "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/amazeelabs/umamiDemo"
-  },
-  "bugs": {
-    "url": "https://github.com/amazeelabs/umamiDemo/issues"
   }
 }

@@ -36,9 +36,9 @@ There's lots of different "easy-to-setup development environments". This demo si
 
 #### Gatsby install
 
-1. Go into the `frontend` directory and run `yarn install`
-2. Use `yarn run` to show a list of commands available.
-3. Run `yarn run start` to start the web and Gatsby development servers. You should see the following:
+1. Go into the `frontend` directory and run `npm install`
+2. Use `npm run` to show a list of commands available.
+3. Run `npm run start` to start the web and Gatsby development servers. You should see the following:
 
     ```
     You can now view gatsby-starter-default in the browser.

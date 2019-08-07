@@ -3,8 +3,8 @@ const btoa = require("btoa");
 
 module.exports = {
   siteMetadata: {
-    title: `Umami: a Gatsby-Drupal-GraphQL demo`,
-    description: `This demo uses the default Gatsby starter and Drupal with the GraphQL 3.x module.`,
+    title: `Gatsby with Drupal and GraphQL`,
+    description: `This demo uses Gatsby and Drupal with the GraphQL 3.x module.`,
     author: `@johnalbin`
   },
   plugins: [
@@ -41,7 +41,7 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ]
 };
