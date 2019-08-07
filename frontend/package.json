@@ -13,7 +13,6 @@
     "gatsby-plugin-sharp": "^2.0.20",
     "gatsby-source-filesystem": "^2.0.20",
     "gatsby-source-graphql": "^2.0.10",
-    "gatsby-transformer-json": "^2.1.9",
     "gatsby-transformer-sharp": "^2.1.13",
     "postcss-preset-env": "^6.6.0",
     "postcss-url": "^8.0.0",
