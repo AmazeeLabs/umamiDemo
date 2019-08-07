@@ -34,9 +34,6 @@ module.exports = {
         templates: path.join(__dirname, "src/templates")
       }
     },
-    // A Gatsby plugin to automatically make the source-graphql parts of your
-    // application available as a live preview.
-    // `gatsby-plugin-graphql-preview`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
