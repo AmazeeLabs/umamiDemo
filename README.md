@@ -30,15 +30,17 @@ There's lots of different "easy-to-setup development environments". This demo si
 #### Drupal install
 
 1. Clone this repository using a recent version of Git. (If you are using an older version of Git, you will also need to run `git submodule init` and `git submodule update` after you clone the repo.)
-2. Go into the `backend` folder and setup the Drupal install with `composer install`
-3. Start the Drupal site with `drush serve`
-4. Optionally, `drush uli --uri http://127.0.0.1:8888` will load the site in your browser and log you in as admin.
+2. Go into the `backend` folder where you can complete all of the following steps.
+3. Copy the `backup/files` folder to `web/sites/default`. i.e. The copy of the folder will now be located at `backend/web/sites/default/files`.
+4. Setup the Drupal install with `composer install`
+5. Start the Drupal site with `drush serve`
+6. Optionally, `drush uli --uri http://127.0.0.1:8888` will load the site in your browser and log you in as admin.
 
 #### Gatsby install
 
 1. Go into the `frontend` directory and run `npm install`
 2. Use `npm run` to show a list of commands available.
-3. Run `npm run start` to start the web and Gatsby development servers. You should see the following:
+3. Use `npm run start` to start the web and Gatsby development servers. You should see the following:
 
     ```
     You can now view gatsby-starter-default in the browser.
